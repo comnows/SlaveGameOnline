@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Deck : MonoBehaviour
+public class PlayerHand : MonoBehaviour
 {
-    public List<Card> cardList;
+    public List<Card> handCard;
 }
