@@ -5,14 +5,17 @@ using UnityEngine;
 public class CardShuffler : MonoBehaviour
 {
     CardDeck cardDeck;
+
+    System.Random random = new System.Random();
     
-    public void Shuffle()
+    public void Shuffle<T>(List<T> deck)
     {
-        while (cardDeck.cardList.Count > 0)
+        for (int card = deck.Count; card > 1; card--)
         {
-            int randomIndex = Random.Range(0, cardDeck.cardList.Count);
-            cardDeck.shuffledCardList.Add(cardDeck.cardList[randomIndex]);
-            cardDeck.cardList.RemoveAt(randomIndex);
+            int swapIndex = random.Next(card);
+            T temp = deck[swapIndex];
+            deck[swapIndex] = deck[card];
+            deck[card] = temp;
         }
     }
 }

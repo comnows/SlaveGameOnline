@@ -21,14 +21,15 @@ public class CardDealOut : MonoBehaviour
         {
             for(int player = 0; player < playerHands.Length; player++)
             {
-                playerHands[player].handCard.Add(cardDeck.shuffledCardList[0]);
+                playerHands[player].handCard.Add(cardDeck.deckList[0]);
+                cardDeck.deckList.RemoveAt(0);
             }
         }
     }
 
     public int GetAmountOfCard()
     {
-        int amount = cardDeck.shuffledCardList.Count / playerHands.Length;
+        int amount = cardDeck.deckList.Count / playerHands.Length;
         
         return amount;
     }

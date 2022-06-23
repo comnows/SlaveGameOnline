@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class CardDeck : MonoBehaviour
 {
-    public List<Card> cardList;
+    public List<Card> deckList;
     public List<Card> shuffledCardList;
 }
