@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class CardShuffler : MonoBehaviour
 {
-    CardDeck cardDeck;
-
-    System.Random random = new System.Random();
+    static System.Random random = new System.Random();
     
-    public void Shuffle<T>(List<T> deck)
+    public static void Shuffle<T>(List<T> deck)
     {
         for (int card = deck.Count; card > 1; card--)
         {

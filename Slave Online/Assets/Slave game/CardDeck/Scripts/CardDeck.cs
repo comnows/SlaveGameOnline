@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class CardDeck : MonoBehaviour
 {
+    private static CardDeck _instance;
+    public static CardDeck Instance { get; }
+
     public List<Card> deckList;
-    public List<Card> shuffledCardList;
+
+    private void Awake() 
+    {
+        _instance = this;
+    }
 }

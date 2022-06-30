@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class CardDealOut : MonoBehaviour
 {
-    CardDeck cardDeck;
     PlayerHand[] playerHands;
 
     private void Start() 
     {
-        cardDeck = GetComponent<CardDeck>();
         playerHands = FindObjectsOfType<PlayerHand>();
     }
     
-    public void DealOut()
+    public void DealAllCard()
     {
         int amountOfCardToDraw = GetAmountOfCard();
         
@@ -21,15 +19,15 @@ public class CardDealOut : MonoBehaviour
         {
             for(int player = 0; player < playerHands.Length; player++)
             {
-                playerHands[player].handCard.Add(cardDeck.deckList[0]);
-                cardDeck.deckList.RemoveAt(0);
+                playerHands[player].handCard.Add(CardDeck.Instance.deckList[0]);
+                CardDeck.Instance.deckList.RemoveAt(0);
             }
         }
     }
 
     public int GetAmountOfCard()
     {
-        int amount = cardDeck.deckList.Count / playerHands.Length;
+        int amount = CardDeck.Instance.deckList.Count / playerHands.Length;
         
         return amount;
     }
